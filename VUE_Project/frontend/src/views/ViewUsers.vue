@@ -13,8 +13,8 @@
                         <thead>
                           <tr>
                             <th scope="col">Id</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Email</th>
+                            <th scope="col">FirstName</th>
+                            <th scope="col">LastName</th>
                             <th scope="col">Phone Number</th>
                             <th scope="col">Gender</th>
                             <th scope="col">Action</th>
@@ -23,8 +23,8 @@
                         <tbody>
                           <tr v-for="user in users" :key="user.id">
                             <th scope="row">{{user.id}}</th>
-                            <td>{{user.name}}</td>
-                            <td>{{user.email}}</td>
+                            <td>{{user.firstName}}</td>
+                            <td>{{user.lastName}}</td>
                             <td>{{user.pNo}}</td>
                             <td>{{user.gender}}</td>
                             <td>

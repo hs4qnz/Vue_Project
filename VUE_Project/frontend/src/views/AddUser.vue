@@ -5,20 +5,20 @@
             <div class="mx-auto w-25 " style="max-width:100%;">
               <h2 class="text-center mb-3">Add User</h2>
               <form @submit.prevent="addUser">
-                <!--name-->
+                <!--FirstName-->
                 <div class="row">
                   <div class="col-md-12 form-group mb-3">
-                    <label for="name" class="form-label">Name</label>
-                    <input id="name"  type="text" name="name" class="form-control" placeholder="Name" required v-model="user.name">
+                    <label for="firstName" class="form-label">FirstName</label>
+                    <input id="firstName"  type="text" name="firstName" class="form-control" placeholder="FirstName" required v-model="user.firstName">
                   </div>
                 </div>
 
                 
-                <!--Email-->
+                <!--LastName-->
                 <div class="row">
                     <div class="col-md-12 form-group mb-3">
-                      <label for="email" class="form-label">Email</label>
-                      <input id="email" type="email"  name="email" class="form-control" placeholder="email" required v-model="user.email" >
+                      <label for="lastName" class="form-label">LastName</label>
+                      <input id="lastName" type="text"  name="lastName" class="form-control" placeholder="LastName" required v-model="user.lastName" >
                     </div>
                   </div>
 
@@ -87,8 +87,8 @@ import Navbar from '../components/Navbar.vue';
         data() {
             return {
                 user : {
-                    name: '',
-                    email: '',
+                    firstName: '',
+                    lastName: '',
                     gender: '',
                     pNo: '',
                     birthdate: ''
