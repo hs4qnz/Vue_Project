@@ -61,14 +61,23 @@ import Navbar from '../components/Navbar.vue'
         },
 
         methods: {
-            getUsers(){
-                fetch('http://localhost:8080/users')
-                .then(res => res.json())
-                .then(data => {
-                    this.users = data
-                    console.log(data)
-                })
-            },
+            getUsers() {
+        fetch('http://localhost:8080/users')
+            .then(res => {
+                if (!res.ok) {
+                    throw new Error(`HTTP error! status: ${res.status}`);
+                }
+                return res.json();
+            })
+            .then(data => {
+                // Sort users by id
+                this.users = data.sort((a, b) => a.id - b.id);
+                console.log(this.users);
+            })
+            .catch(error => {
+                console.error('There was a problem with the fetch operation:', error);
+            });
+    },
             deleteUser(id){
                 fetch(`http://localhost:8080/user/${id}`, {
                     method: 'DELETE'
