@@ -1,0 +1,106 @@
+<template>
+  <div>
+    <label for="items">Choose an item:</label>
+    <select v-model="selectedItem" @change="onChange" class="form-select" aria-label="Default select example">
+      <option disabled value="">Open this select menu</option>
+      <option v-for="item in items" :key="item.value" :value="item.value">
+        {{ item.text }}
+      </option>
+    </select>
+    <p>Selected Item: {{ selectedItem }}</p>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      selectedItem: '',
+      items: [
+        { value: '1', text: 'One' },
+        { value: '2', text: 'Two' },
+        { value: '3', text: 'Three' },
+        { value: '4', text: 'Four' },
+        { value: '5', text: 'Five' },
+        { value: '1', text: 'One6' },
+        { value: '2', text: 'Two7' },
+        { value: '3', text: 'Three8' },
+        { value: '4', text: 'Four9' },
+        { value: '5', text: 'Five10' },
+
+        { value: '1', text: 'One11' },
+        { value: '2', text: 'Two12' },
+        { value: '3', text: 'Three13' },
+        { value: '4', text: 'Four14' },
+        { value: '5', text: 'Five15' },
+        { value: '1', text: 'One16' },
+        { value: '2', text: 'Two17' },
+        { value: '3', text: 'Three18' },
+        { value: '4', text: 'Four19' },
+        { value: '5', text: 'Five20' },
+
+        { value: '1', text: 'One211' },
+        { value: '2', text: 'Two212' },
+        { value: '3', text: 'Three213' },
+        { value: '4', text: 'Four214' },
+        { value: '5', text: 'Five215' },
+        { value: '1', text: 'One216' },
+        { value: '2', text: 'Two217' },
+        { value: '3', text: 'Three218' },
+        { value: '4', text: 'Four219' },
+        { value: '5', text: 'Five220' },
+
+        { value: '1', text: 'One3211' },
+        { value: '2', text: 'Two3212' },
+        { value: '3', text: 'Three3213' },
+        { value: '4', text: 'Four3214' },
+        { value: '5', text: 'Five3215' },
+        { value: '1', text: 'One3216' },
+        { value: '2', text: 'Two3217' },
+        { value: '3', text: 'Three3218' },
+        { value: '4', text: 'Four3219' },
+        { value: '5', text: 'Five3220' },
+
+        { value: '1', text: 'One43211' },
+        { value: '2', text: 'Two43212' },
+        { value: '3', text: 'Three43213' },
+        { value: '4', text: 'Four43214' },
+        { value: '5', text: 'Five43215' },
+        { value: '1', text: 'One43216' },
+        { value: '2', text: 'Two43217' },
+        { value: '3', text: 'Three43218' },
+        { value: '4', text: 'Four43219' },
+        { value: '5', text: 'Five43220' },
+
+        { value: '1', text: 'One543211' },
+        { value: '2', text: 'Two543212' },
+        { value: '3', text: 'Three543213' },
+        { value: '4', text: 'Four543214' },
+        { value: '5', text: 'Five543215' },
+        { value: '1', text: 'One543216' },
+        { value: '2', text: 'Two543217' },
+        { value: '3', text: 'Three543218' },
+        { value: '4', text: 'Four543219' },
+        { value: '5', text: 'Five543220' }
+
+
+      ]
+    };
+  },
+  methods: {
+    onChange(event) {
+      console.log('Selected item:', this.selectedItem);
+    }
+  }
+};
+</script>
+
+<style scoped>
+.form-select {
+  width: 250px;
+  margin: 10px;
+  padding: 5px;
+  max-height: 450px;
+  overflow: scroll;
+}
+</style>

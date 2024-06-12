@@ -1,0 +1,40 @@
+<template>
+  <div>
+    <select
+      @focus="expand"
+      @blur="collapse"
+      @change="handleChange"
+      v-model="selected"
+    >
+      <option v-for="option in options" :key="option" :value="option">{{ option }}</option>
+    </select>
+    <div>Popular Tags:</div>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      selected: null,
+      options: Array.from({ length: 21 }, (_, i) => i + 1),
+    };
+  },
+  methods: {
+    expand(event) {
+      event.target.size = 5;
+    },
+    collapse(event) {
+      event.target.size = 1;
+    },
+    handleChange(event) {
+      event.target.size = 1;
+      event.target.blur();
+    },
+  },
+};
+</script>
+
+<style>
+/* Add any relevant styles here */
+</style>
